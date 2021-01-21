@@ -32,6 +32,9 @@ export const repastUpdate =(repast) =>{
     return Axios.post("/api/1.0/repasts",repast);
 }
 
+export const repastDelete = (id) =>{
+    return Axios.delete(`/api/1.0/repasts/${id}`)
+} 
 export const setAuthorizationHeader = ({token,isLogged}) => {
 
     if (isLogged)
