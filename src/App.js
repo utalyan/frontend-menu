@@ -5,6 +5,7 @@ import { Signup } from "./signup/Signup";
 import {Homepage} from "./design/Homepage";
 import { Logout } from "./signup/Logout";
 import { RepastView } from "./repast/RepastView";
+import { TypeOf } from "./typeof/TypeOf";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/signup" component={Signup}/>
         <Route path="/signout" component={Logout}/>
         <Route path="/repast" component={RepastView}/>
+        <Route path="/typeof" component={TypeOf}/>
       </Switch>
     </HashRouter>
   </div>

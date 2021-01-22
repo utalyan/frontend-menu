@@ -63,7 +63,7 @@ export const Topbar = () => {
                     label: 'Tür Tanım',
                     icon: 'pi pi-fw pi-user-minus',
                     command: (event) => {
-                        window.location.hash = "/login";
+                        window.location.hash = "/typeof";
                     }
 
                 },
