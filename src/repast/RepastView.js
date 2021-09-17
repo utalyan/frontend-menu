@@ -160,7 +160,7 @@ export const RepastView = () => {
     console.log(name);
 
     return (
-        <div className = "d-grid">
+        <div className = "p-grid">
             <Toast ref={toast} position="top-left"/>
             <div className=" p-col-12 p-md-4 p-md-offset-4">
                 <div style={{height:'30px',backgroundColor:'ButtonFace'}}>Düzenle</div>

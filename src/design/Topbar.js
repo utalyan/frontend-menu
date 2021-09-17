@@ -71,7 +71,7 @@ export const Topbar = () => {
                     label: 'Porsiyon Tanım',
                     icon: 'pi pi-fw pi-user-minus',
                     command: (event) => {
-                        window.location.hash = "/login";
+                        window.location.hash = "/serving";
                     }
 
                 },
@@ -79,7 +79,7 @@ export const Topbar = () => {
                     label: 'İsteğe Bağlı Ek Tanım',
                     icon: 'pi pi-fw pi-user-minus',
                     command: (event) => {
-                        window.location.hash = "/login";
+                        window.location.hash = "/addition";
                     }
 
                 },
@@ -87,7 +87,7 @@ export const Topbar = () => {
                     label: 'Yemek Tanım',
                     icon: 'pi pi-fw pi-user-minus',
                     command: (event) => {
-                        window.location.hash = "/login";
+                        window.location.hash = "/food";
                     }
 
                 },

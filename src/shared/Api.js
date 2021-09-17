@@ -48,6 +48,41 @@ export const typeOfDelete = (id) =>{
     return Axios.delete(`/api/1.0/typeof/${id}`)
 }
 
+export const servingGetList = () =>{
+    return Axios.get("/api/1.0/serving");
+}
+
+export const servingUpdate = (servingUpdate) =>{
+    return Axios.post("/api/1.0/serving",servingUpdate);
+}
+
+export const servingDelete = (id) =>{
+    return Axios.delete(`/api/1.0/serving/${id}`)
+}
+
+export const additionGetList = (id) =>{
+    return Axios.get(`/api/1.0/additions/${id}`)
+}
+
+export const additionSave=(addition) =>{
+    return Axios.post("/api/1.0/additions",addition)
+}
+
+export const additionDelete = (id)=>{
+    return Axios.delete(`/api/1.0/additions/${id}`)
+}
+
+export const foodGetList = (typeOfId) =>{
+    return Axios.get(`/api/1.0/foods/${typeOfId}`)
+}
+
+export const foodSave = (food) =>{
+    return Axios.post("/api/1.0/foods/",food)
+}
+
+export const foodDelete = (id) =>{
+    return Axios.delete(`/api/1.0/foods/${id}`)
+}
 export const setAuthorizationHeader = ({token,isLogged}) => {
 
     if (isLogged)

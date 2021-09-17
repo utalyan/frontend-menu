@@ -7,6 +7,7 @@ import { Column } from 'primereact/column';
 import { typeOfGetList,typeOfDelete,typeOfUpdate } from '../shared/Api';
 import { confirmDialog } from 'primereact/confirmdialog';
 import { Toast } from 'primereact/toast';
+import { Message } from 'primereact/message';
 
 export const TypeOf = () => {
 
@@ -15,7 +16,7 @@ export const TypeOf = () => {
     const initTypeOf = {id:"",name:""}
     const [editTypeOf,setEditTypeOf] = React.useState({});
     const [editMode,setEditMode] = React.useState(false);
-
+    const [err,setErr] = React.useState();
 
     const getData  = async ()=>{
         try {
@@ -24,7 +25,9 @@ export const TypeOf = () => {
             setTypeOfList(response.data)
             
         } catch (error) {
-            
+            let {message} = error.response.data
+            setErr(message);
+
         }
     }
 
@@ -62,8 +65,8 @@ export const TypeOf = () => {
             setEditTypeOf(initTypeOf)
 
         } catch (error) {
-            let retError = error.response.data.message;
-            toast.current.show({ severity: 'danger', summary: 'UnSuccessful', detail: {retError}, life: 3000 });
+            let {message} = error.response.data;
+            toast.current.show({ severity: 'danger', summary: 'UnSuccessful', detail: {message}, life: 3000 });
         }
 
 
@@ -161,7 +164,7 @@ export const TypeOf = () => {
     }
 
     return (
-        <div className="d-grid">
+        <div className="p-grid">
             <Toast ref={toast} position="top-left"/>
             <div className="p-col-12 p-md-4 p-md-offset-4">
                 <div style={{height:'30px',backgroundColor:'ButtonFace'}}>Düzenle</div>
@@ -175,7 +178,9 @@ export const TypeOf = () => {
                     <Column field="id"  header="Kodu" style={{width:'20%'}} ></Column>
                     <Column field="name" header="Adı" ></Column>
                 </DataTable>
-
+                {err && <div >
+                    <Message severity="error" text="Field is required" style={{width:"100%"}}/>
+                </div>}
             </div>
         </div>
     )
